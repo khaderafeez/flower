@@ -1,8 +1,17 @@
-document.addEventListener("mousemove", function (e) {
+function createFlower(e) {
   let body = document.querySelector("body");
   let flower = document.createElement("div");
-  let x = e.offsetX;
-  let y = e.offsetY;
+
+  let x, y;
+  if (e.touches) {
+    // For touch events
+    x = e.touches[0].clientX;
+    y = e.touches[0].clientY;
+  } else {
+    // For mouse events
+    x = e.offsetX;
+    y = e.offsetY;
+  }
 
   flower.style.left = x + "px";
   flower.style.top = y + "px";
@@ -19,4 +28,7 @@ document.addEventListener("mousemove", function (e) {
   setTimeout(function () {
     flower.remove();
   }, 9000);
-});
+}
+
+document.addEventListener("mousemove", createFlower);
+document.addEventListener("touchmove", createFlower);
