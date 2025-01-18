@@ -63,7 +63,13 @@ div::before {
     transform: scale(1);
   }
 } 
-
+p{
+  font-size: 1em;
+  color: #000000;
+  text-shadow: 2px 2px #ede9eb;
+  text-align:center;
+  
+}
 h1.text {
   font-size: 5em;
   color: #ff69b4;
