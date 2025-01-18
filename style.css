@@ -1,20 +1,45 @@
+/* Reset and box-sizing */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Body styling */
 body {
   height: 100vh;
   background: #5c5ff9;
   position: relative;
+  overflow: hidden;
 }
+
+/* Title text styling */
 .text {
   color: #fff;
-  font-size: 110px;
+  font-size: 5em;
   text-align: center;
-  margin-top: 18%;
+  margin-top: 10%;
+  text-shadow: 2px 2px #ff1493;
+  animation: flowerAnimation 5s infinite;
 }
+
+/* Responsive font size for mobile screens */
+@media (max-width: 768px) {
+  .text {
+    font-size: 3em;
+  }
+}
+
+p {
+  font-size: 1em;
+  color: #000000;
+  text-shadow: 2px 2px #ede9eb;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Floating flower styles */
 div {
   position: absolute;
   pointer-events: none;
@@ -32,6 +57,8 @@ div::before {
   background-position: center;
   animation: move 2s linear infinite;
 }
+
+/* Animations */
 @keyframes move {
   0% {
     transform: translate(0) rotate(0deg);
@@ -41,17 +68,13 @@ div::before {
   }
 }
 @keyframes fadeInOut {
-  0%,
-  100% {
+  0%, 100% {
     opacity: 0;
   }
-  10%,
-  50% {
+  10%, 50% {
     opacity: 1;
   }
 }
-
-
 @keyframes flowerAnimation {
   0% {
     transform: scale(1);
@@ -62,17 +85,21 @@ div::before {
   100% {
     transform: scale(1);
   }
-} 
-p{
-  font-size: 1em;
-  color: #000000;
-  text-shadow: 2px 2px #ede9eb;
-  text-align:center;
-  
 }
-h1.text {
-  font-size: 5em;
-  color: #ff69b4;
-  text-shadow: 2px 2px #ff1493;
-  animation: flowerAnimation 5s infinite;
+
+/* Responsive styles for smaller screens */
+@media (max-width: 480px) {
+  body {
+    background: #4a4df8;
+  }
+
+  .text {
+    font-size: 2.5em;
+    margin-top: 20%;
+  }
+
+  p {
+    font-size: 0.9em;
+    margin-top: 5px;
+  }
 }
